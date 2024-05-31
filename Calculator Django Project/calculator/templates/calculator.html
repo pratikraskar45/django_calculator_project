@@ -1,0 +1,36 @@
+{{BASE_DIR}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <!-- <link rel="stylesheet" href="/calculator/static/style.css"> -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+            <form method="post">
+                {% csrf_token %} 
+                <h1>calculator</h1>
+                <label for="">Value 1:</label>
+                <input type="text" name="num1" value="{{n1}}">  <br>
+                <label for="">Select oprator</label>
+                <select name="opr" id="" >
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>                  <br>
+                <label for="">Value 2:</label>
+                <input type="text" name="num2" value="{{n2}}"><br>
+                <button type="submit">Calculate</button>
+                <br>
+                <label for="">OutPut =</label>
+                <input type="text" value="{{c}}">
+            </form>
+        </div>
+    
+</body>
+</html>
